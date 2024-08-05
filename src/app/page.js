@@ -7,27 +7,14 @@ import Link from 'next/link';
 
 export default function Home() {
 
-  const { setColorScheme, clearColorScheme } = useMantineColorScheme();
-
-
   return (
     <Container size="xs">
 
-
-      <Text>Some text</Text>
-
-
       <Text ff="monospace">
-        This text uses --mantine-font-family-monospace variable
+        Welcome to the LLM Reasoning Benchmark, a cutting-edge initiative designed to assess and compare the cognitive capabilities of large language models (LLMs) in complex reasoning tasks. As artificial intelligence continues to advance at an unprecedented pace, the need for robust, standardized evaluation methods becomes increasingly crucial. Our benchmark aims to fill this gap by providing a comprehensive framework for measuring LLM performance across various dimensions of reasoning.
       </Text>
      
       <Divider my="xl" />
-
-      <Group>
-        <Button size="compact-xs" color="dark.5" onClick={() => setColorScheme('light')}>Light mode</Button>
-        <Button size="compact-xs" color="dark.5" onClick={() => setColorScheme('dark')}>Dark mode</Button>
-        <Button size="compact-xs" color="dark.5" onClick={() => clearColorScheme()}>Reset color scheme</Button>
-      </Group>
 
     </Container>
   );

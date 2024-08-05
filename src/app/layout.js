@@ -8,6 +8,8 @@ import { ColorSchemeScript, MantineProvider, Container, Image, Group, Title } fr
 import { Notifications } from '@mantine/notifications';
 import { ModalsProvider } from '@mantine/modals';
 
+import Header from '@/components/Header';
+
 
 export const metadata = {
   title: "LLM Reasoning Benchmark",
@@ -29,18 +31,7 @@ export default function RootLayout({ children }) {
         <MantineProvider theme={theme}>
           <Notifications />
           <ModalsProvider>
-
-            <Container size="xs" my="xl">
-              <Group>
-              
-                <Image w={60} src="./llm-reasoning-benchmark-icon.png" />
-                <Title order={1}>LLM Reasoning Benchmark</Title>
-              </Group>
-
-              
-            </Container>
-                    
-            
+            <Header />
             {children}
           </ModalsProvider>
         </MantineProvider>

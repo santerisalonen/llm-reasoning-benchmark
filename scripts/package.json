@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ai-sdk/anthropic": "^0.0.35",
+    "@ai-sdk/google": "^0.0.30",
+    "@ai-sdk/openai": "^0.0.40",
+    "ai": "^3.3.0",
+    "cli-color": "^2.0.4",
+    "dotenv": "^16.4.5",
+    "prompt-async": "^0.9.9"
+  }
+}
