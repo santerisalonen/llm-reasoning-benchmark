@@ -16,6 +16,8 @@
     "ai": "^3.3.0",
     "cli-color": "^2.0.4",
     "dotenv": "^16.4.5",
-    "prompt-async": "^0.9.9"
+    "js-yaml": "^4.1.0",
+    "prompt-async": "^0.9.9",
+    "zod": "^3.23.8"
   }
 }

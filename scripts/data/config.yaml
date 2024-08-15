@@ -1,0 +1,15 @@
+Questions:
+  - QuestionId: fraud-detection-1
+    Theme: Expected value vs. Common sense fraud detection
+    Assisted: 0
+    QuestionText: >
+      On a street there is a man who offers you a bet: He throws a coin and if
+      it is tails you get $3. If it is heads you lose $1.
+
+      Should you start playing?  a) yes  b) no
+    ExpertAnswer: >
+      We present a typical situation with an offer that is too good to be true.
+      There seems to be one decision with positive expected value. However the
+      correct answer to the questions should be "no" because of one would expect
+      the man in the street also be rational and not propose the bet if it had
+      negative EV for him.
