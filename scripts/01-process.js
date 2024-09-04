@@ -100,7 +100,6 @@ const logFilePath = './data/log.jsonl';
           method: method,
           answerText: answerText,
           questionId: question.QuestionId,
-          question: question,
           reviews: reviews
         })
       }

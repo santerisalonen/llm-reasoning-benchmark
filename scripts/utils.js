@@ -7,6 +7,42 @@ import clc from "cli-color";
 
 prompt.start();
 
+export const getJsonLines = (path) => {
+  const contents = fs.readFileSync(path, 'utf-8');
+  const array = contents.split('\n').map((row) => {
+    try {
+      return JSON.parse(row);
+    }
+    catch(e) {
+      return null;
+    }
+  }).filter(row => row)
+  return array;
+}
+
+export const keepOnlyLatestAnswerForAModel = (arr) => {
+  // Create a Map to store the latest object for each model
+  const latestByModel = new Map();
+  // Iterate through the array
+  for (const obj of arr) {
+    const currentDate = new Date(obj.date);
+    // If the model doesn't exist in the Map, or if the current date is later,
+    // update the Map with the current object
+    if (!latestByModel.has(obj.model) || currentDate > new Date(latestByModel.get(obj.model).date)) {
+      latestByModel.set(obj.model, obj);
+    }
+  }
+  // Convert the Map values back to an array
+  return Array.from(latestByModel.values());
+}
+export const writeQuestionsAndAnswers = (filePath, data) => {
+  try {
+    fs.writeFileSync(filePath, yaml.dump(data), 'utf-8');
+    console.log(clc.green(`wrote output file ${filePath}`))
+  } catch (e) {
+    console.log(e);
+  }
+}
 export const getConfig = async (configPath) => {
   try {
     const file = fs.readFileSync(configPath, 'utf-8');
