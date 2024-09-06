@@ -23,6 +23,7 @@ export default [
     name: 'claude-3-5-sonnet-20240620',
     model: anthropic('claude-3-5-sonnet-20240620'),
     useForReview: true,
+    useForSummary: true
   },
   {
     name: "test-model",

@@ -45,6 +45,15 @@ export const writeQuestionsAndAnswers = (filePath, data) => {
     console.log(e);
   }
 }
+export const getData = async (dataFilePath) => {
+  try {
+    const file = fs.readFileSync(dataFilePath, 'utf-8');
+    const doc = yaml.load(file);
+    return doc;
+  } catch (e) {
+    console.log(e);
+  }
+};
 export const getConfig = async (configPath) => {
   try {
     const file = fs.readFileSync(configPath, 'utf-8');
