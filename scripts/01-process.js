@@ -6,7 +6,7 @@ import { z } from "zod";
 import dotenv from 'dotenv';
 import clc from "cli-color";
 
-import {askAnswerText, askDate, confirm, getConfig, appendToLog} from './utils.js';
+import {askAnswerText, getJsonLines, askDate, confirm, getConfig, appendToLog} from './utils.js';
 
 const configPath = './data/config.yaml';
 const logFilePath = './data/log.jsonl';
@@ -15,8 +15,11 @@ const logFilePath = './data/log.jsonl';
 (async () => {
   dotenv.config();
   const config = await getConfig(configPath);
+  
+  const loggedAnswers = getJsonLines(logFilePath);
   const date = await askDate();
   const questions = config.Questions;
+
   
   for (const model of models) {
     if (await confirm(`Process ${model.name}`)) {
@@ -25,6 +28,14 @@ const logFilePath = './data/log.jsonl';
 
       for (const question of questions) {
 
+        const existingAnswer = loggedAnswers.filter((ans) => {
+          return `${ans.model}-${ans.questionId}` == `${model.name}-${question.QuestionId}`
+        })
+        if (existingAnswer.length > 0) {
+          console.log(`skip model ${model.name} for question ${question.QuestionId} - already logged answer`);
+          continue;
+        } 
+        
         console.log(`-------------- question ----------------`);
         console.log(question.QuestionText);
 

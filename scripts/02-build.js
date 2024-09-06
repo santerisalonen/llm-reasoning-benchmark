@@ -12,12 +12,18 @@ import {keepOnlyLatestAnswerForAModel, writeQuestionsAndAnswers, getJsonLines, g
 
   let config = await getConfig(configPath);
   const answers = keepOnlyLatestAnswerForAModel( getJsonLines(logFilePath) );
+  console.log(`Found ${answers.length} total answers`)
 
   for (let question of config.Questions) {
+    console.log(`##### ----`)
+    console.log(`processing question ${question.QuestionId}`)
+    
     let matchingAnswers = answers.filter((ans) => {
       return ans.questionId == question.QuestionId
     })
+    console.log(`found ${matchingAnswers.length} answers`)
     question.Answers = matchingAnswers;
+
   }
 
   writeQuestionsAndAnswers(outFilePatH, config)

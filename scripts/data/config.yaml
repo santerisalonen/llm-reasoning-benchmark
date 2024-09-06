@@ -8,8 +8,159 @@ Questions:
 
       Should you start playing?  a) yes  b) no
     ExpertAnswer: >
-      We present a typical situation with an offer that is too good to be true.
+      No. We present a typical situation with an offer that is too good to be true.
       There seems to be one decision with positive expected value. However the
       correct answer to the questions should be "no" because of one would expect
       the man in the street also be rational and not propose the bet if it had
       negative EV for him.
+  - QuestionId: fraud-detection-1-assisted
+    Theme: Expected value vs. Common sense fraud detection
+    Assisted: 1
+    QuestionText: >
+      On a street there is a man who offers you a bet: He throws a coin and if it is tails you get $3. If it is heads you lose $1.
+
+      You take the bet and lose $100 because it is heads 100 times in a row.
+
+      Should you continue playing? 
+      a) yes
+      b) no
+    ExpertAnswer: >
+      No. We present a typical situation with an offer that is too good to be true.
+      There seems to be one decision with positive expected value. However the
+      correct answer to the questions should be "no" because of one would expect
+      the man in the street also be rational and not propose the bet if it had
+      negative EV for him. 100 losses in a row verifies that game is rigged, do not continue.
+  - QuestionId: narrative-bias-and-base-rate-fallacy-1
+    Theme: Narrative bias and base rate fallacy
+    Assisted: 0
+    QuestionText: >
+      Sandra is quiet and smart. She enjoys long walks alone and literature. She even writes poems to herself. 
+
+      We can't know for sure but you need to pick one option out of the following: 
+      a) Sandra is a librarian 
+      b) Sandra is a nurse
+    ExpertAnswer: >
+      Even if the narrative suggests a librarian, the answer should be nurse because of the following reason: - the number of nurses is likely 10 times or more higher than the number of librarians, so the base rate probability of being a nurse is lot higher
+  - QuestionId: narrative-bias-and-base-rate-fallacy-1-assisted
+    Theme: Narrative bias and base rate fallacy assisted
+    Assited: 1
+    QuestionText: >
+      Sandra is quiet and smart. She enjoys long walks alone and literature. She even writes poems to herself. 
+
+      We can't know for sure but you need to pick one option out of the following: 
+      a) Sandra is a librarian 
+      b) Sandra is a nurse 
+
+      Think about base rate probability of these professions before answering.
+    ExpertAnswer: >
+      Even if the narrative suggests a librarian, the answer should be nurse because of the following reason: - the number of nurses is likely 10 times or more higher than the number of librarians, so the base rate probability of being a nurse is lot higher
+  - QuestionId: system-level-dynamics-and-queuing-theory-1
+    Theme: System level dynamics and queing theory
+    Assited: 0
+    QuestionText: >
+      A grocery store wanted to lower costs. They observed that cashiers were only serving customers for 60% of the time. Otherwise they were being idle. So they fired 40% of the cashiers.
+
+      After a week of reducing the staff they observed their cashiers again.
+
+      Did they see:
+      a) close to zero idleness
+      b) close to 20% idleness
+      c) close to 40% idleness
+    ExpertAnswer: >
+      Because there is randomness in customer flow, according to queing theory the lines would get too long if utilization gets close to 100%. Maximum real utlization with manageable wait times is close to 80%. So correct answer is b 20%
+  - QuestionId: system-level-dynamics-and-queuing-theory-1-assisted
+    Theme: System level dynamics and queing theory
+    Assited: 1
+    QuestionText: >
+      A grocery store wanted to lower costs. They observed that cashiers were only serving customers for 60% of the time. Otherwise they were being idle. So they fired 40% of the cashiers.
+
+      After a week of reducing the staff they observed their cashiers again.
+
+      Did they see:
+      a) close to zero idleness
+      b) close to 20% idleness
+      c) close to 40% idleness
+
+      Think about queueing theory before answering.
+    ExpertAnswer: >
+      Because there is randomness in customer flow, according to queing theory the lines would get too long if utilization gets close to 100%. Maximum real utlization with manageable wait times is close to 80%. So correct answer is b 20%
+  - QuestionId: system-level-dynamics-and-scaling-laws-1
+    Theme: System leven dynamics and scaling laws
+    Assited: 0
+    QuestionText: >
+      City A has a population of 100,000 and reports 500 serious crimes per year. City B has a population of 1,000,000 (10 times larger than City A). 
+
+      Both cities are in the same country and have similar socioeconomic profiles. Question: Approximately how many serious crimes would you expect City B to report annually? 
+      a) 5,000 crimes 
+      b) 7,500 crimes 
+      c) 10,000 crime
+    ExpertAnswer: >
+      The correct answer is b), based on the urban scaling theory. Here's the reasoning: Superlinear scaling of crime: According to research, socioeconomic quantities like serious crime tend to scale superlinearly with city size, following a power law with an exponent of approximately 1.15.
+  - QuestionId: system-level-dynamics-and-scaling-laws-1-assisted
+    Theme: System leven dynamics and scaling laws
+    Assited: 1
+    QuestionText: >
+      City A has a population of 100,000 and reports 500 serious crimes per year. City B has a population of 1,000,000 (10 times larger than City A). 
+      Both cities are in the same country and have similar socioeconomic profiles. 
+
+      Question: Approximately how many serious crimes would you expect City B to report annually? 
+
+      a) 5,000 crimes 
+      b) 7,500 crimes 
+      c) 10,000 crime
+
+      Think about scaling laws for crime in cities.
+    ExpertAnswer: >
+      The correct answer is b), based on the urban scaling theory. Here's the reasoning: Superlinear scaling of crime: According to research, socioeconomic quantities like serious crime tend to scale superlinearly with city size, following a power law with an exponent of approximately 1.15.
+  - QuestionId: system-level-dynamics-and-evolution-of-resistance-1
+    Theme: System leven dynamics and biological evolution of resistance to pesticides
+    Assited: 0
+    QuestionText: >
+      A farmer has been losing about 20% of their corn crop to corn borers each year. On average, this costs the farmer $10,000 per year in lost revenue. A new pesticide becomes available that promises to eliminate corn borers completely. The pesticide costs $2,000 per year to apply. 
+
+      The farmer decides to use the pesticide and for the first two years, it works perfectly - no corn is lost to corn borers.
+
+      How much money will the farmer likely save over 10 years by using this pesticide?
+
+      a) Approximately $80,000
+      b) Probably very little or nothing
+    ExpertAnswer: >
+      The correct answer is b), based on the concept of the pesticide treadmill: The pesticide works well at first, seemingly solving the problem.Over time, some corn borers develop resistance to the pesticide. This is a non-linear process - the population of resistant pests grows exponentially. As resistant pests survive and reproduce, the corn borer population may return to previous levels or even exceed them.
+  - QuestionId: system-level-dynamics-and-evolution-of-resistance-1-assisted
+    Theme: System leven dynamics and biological evolution of resistance to pesticides
+    Assited: 1
+    QuestionText: >
+      A farmer has been losing about 20% of their corn crop to corn borers each year. On average, this costs the farmer $10,000 per year in lost revenue. A new pesticide becomes available that promises to eliminate corn borers completely. The pesticide costs $2,000 per year to apply. 
+
+      The farmer decides to use the pesticide and for the first two years, it works perfectly - no corn is lost to corn borers.
+
+      How much money will the farmer likely save over 10 years by using this pesticide?
+
+      a) Approximately $80,000
+      b) Probably very little or nothing
+
+      Think about concept called pesticide treadmill before answering.
+    ExpertAnswer: >
+      The correct answer is b), based on the concept of the pesticide treadmill: The pesticide works well at first, seemingly solving the problem.Over time, some corn borers develop resistance to the pesticide. This is a non-linear process - the population of resistant pests grows exponentially. As resistant pests survive and reproduce, the corn borer population may return to previous levels or even exceed them.
+  - QuestionId: system-level-dynamics-and-forest-ecology-1
+    Theme: System leven dynamics and forest ecology
+    Assited: 0
+    QuestionText: >
+      A town has a forest in which there are small fires twice a year. One small fire causes approximately $100,000 in damage. The town wants to stop these small fires and they set up a team who stop fires before they grow. In the first two years the team manages to stop all fires. The cost of the team is $50,000 a year. How much money does the town save over 10 years
+
+      a) Approximately $1.5 million
+      b) probably nothing or very little
+    ExpertAnswer: >
+      Correct answer is b) probably nothing or very little. Because the prevention of small fires likely leads to conditions for a much larger, more destructive fire in the future. The impact of completely preventing small fires is not linear. Accumulation of undergrowth and deadwood over time increases the risk of a major fire.
+  - QuestionId: system-level-dynamics-and-forest-ecology-1-assisted
+    Theme: System leven dynamics and forest ecology
+    Assited: 1
+    QuestionText: >
+      A town has a forest in which there are small fires twice a year. One small fire causes approximately $100,000 in damage. The town wants to stop these small fires and they set up a team who stop fires before they grow. In the first two years the team manages to stop all fires. The cost of the team is $50,000 a year. How much money does the town save over 10 years
+
+      a) Approximately $1.5 million
+      b) probably nothing or very little
+
+      Before answering, think about forest ecology and possible effects of preventing small fires.
+    ExpertAnswer: >
+      Correct answer is b) probably nothing or very little. Because the prevention of small fires likely leads to conditions for a much larger, more destructive fire in the future. The impact of completely preventing small fires is not linear. Accumulation of undergrowth and deadwood over time increases the risk of a major fire.

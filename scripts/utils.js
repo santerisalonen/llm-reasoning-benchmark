@@ -17,6 +17,7 @@ export const getJsonLines = (path) => {
       return null;
     }
   }).filter(row => row)
+  console.log(`array length ${array.length}`)
   return array;
 }
 
@@ -25,11 +26,12 @@ export const keepOnlyLatestAnswerForAModel = (arr) => {
   const latestByModel = new Map();
   // Iterate through the array
   for (const obj of arr) {
+    const key = `${obj.model}-${obj.questionId};`
     const currentDate = new Date(obj.date);
     // If the model doesn't exist in the Map, or if the current date is later,
     // update the Map with the current object
-    if (!latestByModel.has(obj.model) || currentDate > new Date(latestByModel.get(obj.model).date)) {
-      latestByModel.set(obj.model, obj);
+    if (!latestByModel.has(key) || currentDate > new Date(latestByModel.get(key).date)) {
+      latestByModel.set(key, obj);
     }
   }
   // Convert the Map values back to an array
