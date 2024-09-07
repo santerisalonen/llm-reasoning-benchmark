@@ -2,10 +2,9 @@
 import fs from 'fs';
 const configPath = './data/config.yaml';
 const logFilePath = './data/log.jsonl';
-const outFilePatH = './data/data.yml';
+const outFilePatH = './data/answers.yml';
 
-import {keepOnlyLatestAnswerForAModel, writeQuestionsAndAnswers, getJsonLines, getConfig} from './utils.js';
-
+import {keepOnlyLatestAnswerForAModel, writeToYaml, getJsonLines, getConfig} from './utils.js';
 
 
 (async () => {
@@ -26,7 +25,7 @@ import {keepOnlyLatestAnswerForAModel, writeQuestionsAndAnswers, getJsonLines, g
 
   }
 
-  writeQuestionsAndAnswers(outFilePatH, config)
+  writeToYaml(outFilePatH, config)
 
 
 

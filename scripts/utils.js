@@ -37,7 +37,7 @@ export const keepOnlyLatestAnswerForAModel = (arr) => {
   // Convert the Map values back to an array
   return Array.from(latestByModel.values());
 }
-export const writeQuestionsAndAnswers = (filePath, data) => {
+export const writeToYaml = (filePath, data) => {
   try {
     fs.writeFileSync(filePath, yaml.dump(data), 'utf-8');
     console.log(clc.green(`wrote output file ${filePath}`))

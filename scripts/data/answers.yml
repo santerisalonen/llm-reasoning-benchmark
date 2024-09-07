@@ -1,3 +1,44 @@
+Summaries:
+  assisted:
+    - model: gpt-4-turbo-2024-04-09
+      overall: >-
+        The AI model demonstrates basic mathematical and analytical skills, but
+        consistently falls short in critical thinking, contextual analysis, and
+        applying theoretical knowledge to real-world scenarios. The model often
+        relies on simplistic, linear approaches to complex problems, missing
+        crucial insights and deeper implications.
+      strenghts: >-
+        Good basic mathematical skills and ability to perform straightforward
+        calculations. Shows some analytical thinking and attempts to approach
+        problems logically.
+      weaknesses: >-
+        Lacks critical thinking skills and often fails to consider context.
+        Tends to oversimplify complex issues, missing key concepts like
+        non-linear relationships, long-term consequences, and real-world
+        implications. Fails to question assumptions or consider alternative
+        possibilities. Often misses the underlying point of questions, focusing
+        on surface-level interpretations.
+      score: 2.17
+  unAssisted:
+    - model: gpt-4-turbo-2024-04-09
+      overall: >-
+        The AI model demonstrates basic mathematical and analytical skills, but
+        consistently falls short in critical thinking, contextual analysis, and
+        applying theoretical knowledge to real-world scenarios. The model often
+        relies on simplistic, linear approaches to complex problems, missing
+        crucial insights and deeper implications.
+      strenghts: >-
+        Good basic mathematical skills and ability to perform straightforward
+        calculations. Shows some analytical thinking and attempts to approach
+        problems logically.
+      weaknesses: >-
+        Lacks critical thinking skills and often fails to consider context.
+        Tends to oversimplify complex issues, missing key concepts like
+        non-linear relationships, long-term consequences, and real-world
+        implications. Fails to question assumptions or consider alternative
+        possibilities. Often misses the underlying point of questions, focusing
+        on surface-level interpretations.
+      score: 2.17
 Questions:
   - QuestionId: fraud-detection-1
     Theme: Expected value vs. Common sense fraud detection
@@ -1155,7 +1196,7 @@ Questions:
             correctness: false
   - QuestionId: narrative-bias-and-base-rate-fallacy-1-assisted
     Theme: Narrative bias and base rate fallacy assisted
-    Assited: 1
+    Assisted: 1
     QuestionText: >
       Sandra is quiet and smart. She enjoys long walks alone and literature. She
       even writes poems to herself. 
@@ -1530,7 +1571,7 @@ Questions:
             correctness: true
   - QuestionId: system-level-dynamics-and-queuing-theory-1
     Theme: System level dynamics and queing theory
-    Assited: 0
+    Assisted: 0
     QuestionText: >
       A grocery store wanted to lower costs. They observed that cashiers were
       only serving customers for 60% of the time. Otherwise they were being
@@ -1992,7 +2033,7 @@ Questions:
             correctness: false
   - QuestionId: system-level-dynamics-and-queuing-theory-1-assisted
     Theme: System level dynamics and queing theory
-    Assited: 1
+    Assisted: 1
     QuestionText: >
       A grocery store wanted to lower costs. They observed that cashiers were
       only serving customers for 60% of the time. Otherwise they were being
@@ -2487,7 +2528,7 @@ Questions:
             correctness: true
   - QuestionId: system-level-dynamics-and-scaling-laws-1
     Theme: System leven dynamics and scaling laws
-    Assited: 0
+    Assisted: 0
     QuestionText: >
       City A has a population of 100,000 and reports 500 serious crimes per
       year. City B has a population of 1,000,000 (10 times larger than City A). 
@@ -2863,7 +2904,7 @@ Questions:
             correctness: false
   - QuestionId: system-level-dynamics-and-scaling-laws-1-assisted
     Theme: System leven dynamics and scaling laws
-    Assited: 1
+    Assisted: 1
     QuestionText: >
       City A has a population of 100,000 and reports 500 serious crimes per
       year. City B has a population of 1,000,000 (10 times larger than City A). 
@@ -3298,7 +3339,7 @@ Questions:
             correctness: true
   - QuestionId: system-level-dynamics-and-evolution-of-resistance-1
     Theme: System leven dynamics and biological evolution of resistance to pesticides
-    Assited: 0
+    Assisted: 0
     QuestionText: >
       A farmer has been losing about 20% of their corn crop to corn borers each
       year. On average, this costs the farmer $10,000 per year in lost revenue.
@@ -3701,7 +3742,7 @@ Questions:
             correctness: true
   - QuestionId: system-level-dynamics-and-evolution-of-resistance-1-assisted
     Theme: System leven dynamics and biological evolution of resistance to pesticides
-    Assited: 1
+    Assisted: 1
     QuestionText: >
       A farmer has been losing about 20% of their corn crop to corn borers each
       year. On average, this costs the farmer $10,000 per year in lost revenue.
@@ -4180,7 +4221,7 @@ Questions:
             correctness: true
   - QuestionId: system-level-dynamics-and-forest-ecology-1
     Theme: System leven dynamics and forest ecology
-    Assited: 0
+    Assisted: 0
     QuestionText: >
       A town has a forest in which there are small fires twice a year. One small
       fire causes approximately $100,000 in damage. The town wants to stop these
@@ -4573,7 +4614,7 @@ Questions:
             correctness: false
   - QuestionId: system-level-dynamics-and-forest-ecology-1-assisted
     Theme: System leven dynamics and forest ecology
-    Assited: 1
+    Assisted: 1
     QuestionText: >
       A town has a forest in which there are small fires twice a year. One small
       fire causes approximately $100,000 in damage. The town wants to stop these
