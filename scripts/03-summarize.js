@@ -53,7 +53,7 @@ const groupAnswers = (questionsWithReviews) => {
 
     console.log(`un assisted: ${unAssistedReviews.length}, average score: ${averageScoreUnAssisted}`)
     console.log(`assisted: ${assistedReviews.length}, average score: ${averageScoreAssisted}`)
-
+    /*
 
     const summaryModel = models.find((model) => model.useForSummary );
 
@@ -87,11 +87,13 @@ const groupAnswers = (questionsWithReviews) => {
 
     summaries.unAssisted.push( {model: model, averageScore: averageScoreUnAssisted, ...unAssistedSummary});
 
+
     const {object: assistedSummary} = await generateObject({
       model: summaryModel.model,
       schema: schema,
       prompt: instructionPrompt + assistedReviewsText,
     });
+  
 
     summaries.assisted.push( {model: model, averageScore: averageScoreAssisted, ...assistedSummary});
 
@@ -124,11 +126,12 @@ const groupAnswers = (questionsWithReviews) => {
       schema: schema,
       prompt: topLevelSummaryPrompt,
     });
+    */
 
     summaries.models.push( {
       model: model, 
       averageScore: Math.round((averageScoreAssisted + averageScoreUnAssisted) / 2 * 100) / 100, 
-      ...topLevelSummary
+      //...topLevelSummary
     });
     console.log(`summarized ${model} OK`)
  
