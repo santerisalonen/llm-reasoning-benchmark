@@ -164,3 +164,35 @@ Questions:
       Before answering, think about forest ecology and possible effects of preventing small fires.
     ExpertAnswer: >
       Correct answer is b) probably nothing or very little. Because the prevention of small fires likely leads to conditions for a much larger, more destructive fire in the future. The impact of completely preventing small fires is not linear. Accumulation of undergrowth and deadwood over time increases the risk of a major fire.
+      
+  - QuestionId: software-development
+    Theme: Project duration in software development
+    Assisted: 0
+    QuestionText: >
+      Assume there is a software development project. We have calculated that it takes 100 days to complete the project if there are 10 developers working with the project full time. 
+
+      We want to complete the project in 25 days. How many developers we need to achieve that? 
+      a) 10 developers 
+      b) 40 developers 
+      c) 100 developers 
+      d) this is a trick question
+    ExpertAnswer: >
+      Correct answer is d) this is a trick question. According to Brooks's Law software development projects have tasks that can't be easily parallelized. There is also lots of communication overhead and other factors at play. It might be that project actually takes longer with 40 developers, which would be mathematically correct answer. If we wanted to reduce project duration, this would more related to adjusting the scope of the project instead of adjusting number of developers.
+
+  - QuestionId: software-development-assisted
+    Theme: Project duration in software development
+    Assisted: 0
+    QuestionText: >
+      Assume there is a software development project. We have calculated that it takes 100 days to complete the project if there are 10 developers working with the project full time. 
+
+      We want to complete the project in 25 days. How many developers we need to achieve that? 
+      a) 10 developers 
+      b) 40 developers 
+      c) 100 developers 
+      d) this is a trick question
+
+      Think about Brooks's law before answering.
+    ExpertAnswer: >
+      Correct answer is d) this is a trick question. According to Brooks's Law software development projects have tasks that can't be easily parallelized. There is also lots of communication overhead and other factors at play. It might be that project actually takes longer with 40 developers, which would be mathematically correct answer. If we wanted to reduce project duration, this would more related to adjusting the scope of the project instead of adjusting number of developers.
+
+

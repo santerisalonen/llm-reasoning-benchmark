@@ -1,30 +1,516 @@
 Summaries:
   models:
     - model: gpt-4-turbo-2024-04-09
-      averageScore: 2.84
+      averageScore: 2.97
+      reasoningModel: false
+      averageWordCount: 177
+      overall: >-
+        The AI model demonstrates inconsistent performance across different
+        questions. While it shows strong mathematical skills and basic
+        analytical abilities, it often fails to apply critical thinking and
+        consider broader contexts. The model excels in understanding software
+        development principles but struggles with more nuanced reasoning in
+        other areas.
+      strenghts:
+        - Strong mathematical and calculation skills
+        - >-
+          Good understanding of software development principles (e.g., Brooks's
+          Law)
+        - Ability to perform basic analytical reasoning
+        - Accurate interpretation of straightforward problem statements
+      weaknesses:
+        - Lack of critical thinking in complex scenarios
+        - Failure to consider broader contexts and real-world implications
+        - Tendency to oversimplify problems and miss key concepts
+        - >-
+          Inconsistent application of theoretical knowledge across different
+          domains
     - model: gpt-4o-2024-05-13
-      averageScore: 2.75
+      averageScore: 2.87
+      reasoningModel: false
+      averageWordCount: 165
+      overall: >-
+        The AI model demonstrates inconsistent performance across different
+        problem-solving scenarios. While showing strength in mathematical
+        calculations, it often fails to apply critical thinking and consider
+        broader implications. The model struggles with recognizing non-linear
+        relationships and tends to oversimplify complex problems.
+      strenghts:
+        - Strong mathematical calculation skills
+        - Ability to perform basic cost-benefit analysis
+        - Clear presentation of reasoning in some cases
+        - Occasional recognition of potential pitfalls in reasoning
+      weaknesses:
+        - Lack of critical thinking in complex scenarios
+        - >-
+          Tendency to overlook non-linear relationships and real-world
+          complexities
+        - >-
+          Overreliance on simple mathematical models without considering broader
+          context
+        - Difficulty in questioning premises and recognizing trick questions
     - model: gemini-1.0-pro-001
       averageScore: 2.5
+      reasoningModel: false
+      averageWordCount: 4
+      overall: >-
+        The AI model demonstrates inconsistent performance across different
+        problem types. While it occasionally provides correct answers, it
+        frequently lacks depth in reasoning, critical thinking, and the ability
+        to consider long-term implications or complex factors beyond
+        surface-level calculations.
+      strenghts:
+        - Ability to provide correct answers in some cases
+        - Basic mathematical reasoning and calculations
+        - Avoidance of some obvious traps in problem-solving
+      weaknesses:
+        - Lack of in-depth explanations and reasoning for answers
+        - >-
+          Insufficient critical thinking and consideration of long-term
+          implications
+        - Tendency to oversimplify complex problems
+        - Failure to apply theoretical knowledge to real-world scenarios
     - model: claude-3-haiku-20240307
       averageScore: 2.59
+      reasoningModel: false
+      averageWordCount: 197
+      overall: >-
+        The AI model demonstrates basic mathematical and logical skills, but
+        consistently falls short in critical thinking, contextual analysis, and
+        applying theoretical knowledge to complex real-world scenarios. The
+        model often resorts to simplistic, linear thinking and fails to consider
+        broader implications or underlying principles.
+      strenghts:
+        - Basic mathematical competence in simple calculations
+        - Attempts at logical reasoning and problem-solving
+        - Some understanding of fundamental concepts in various fields
+      weaknesses:
+        - Lack of critical thinking and deeper analysis
+        - Failure to consider context and broader implications
+        - Oversimplification of complex problems
+        - Inability to recognize trick questions or non-linear relationships
     - model: claude-3-5-sonnet-20240620
-      averageScore: 3.54
+      averageScore: 3.64
+      reasoningModel: false
+      averageWordCount: 208
+      overall: >-
+        The AI model demonstrates inconsistent performance across different
+        problem-solving scenarios. While it shows strong mathematical skills and
+        logical reasoning in some cases, it often fails to apply critical
+        thinking and consider real-world complexities. The model struggles with
+        identifying trick questions and tends to overlook important contextual
+        factors.
+      strenghts:
+        - Strong mathematical and calculation skills
+        - Clear step-by-step reasoning in problem-solving
+        - Good understanding of basic concepts and theories
+        - Ability to provide detailed explanations for straightforward problems
+      weaknesses:
+        - Lack of critical thinking in complex scenarios
+        - Failure to consider real-world implications and contextual factors
+        - Difficulty in identifying and addressing trick questions
+        - >-
+          Tendency to overlook non-linear relationships and complex system
+          dynamics
     - model: claude-3-7-sonnet-20250219
-      averageScore: 3.67
+      averageScore: 3.7
+      reasoningModel: false
+      averageWordCount: 152
+      overall: >-
+        The AI model demonstrates strong mathematical skills and basic logical
+        reasoning, but often struggles with deeper critical thinking and
+        considering real-world complexities. It excels in straightforward
+        calculations but frequently misses nuanced aspects of problems,
+        particularly in scenarios requiring interdisciplinary knowledge or
+        questioning of assumptions.
+      strenghts:
+        - Excellent mathematical skills and basic logical reasoning
+        - Strong performance in straightforward, calculation-based problems
+        - Ability to apply theoretical knowledge in simple scenarios
+        - >-
+          Occasional displays of high-level critical thinking in complex
+          problems
+      weaknesses:
+        - Often misses deeper implications and real-world complexities
+        - Tendency to overlook interdisciplinary aspects of problems
+        - Difficulty in questioning assumptions or recognizing 'trick' questions
+        - >-
+          Inconsistent application of critical thinking skills across different
+          problem types
     - model: deepseek-chat
-      averageScore: 3.33
+      averageScore: 3.51
+      reasoningModel: false
+      averageWordCount: 608
+      overall: >-
+        The AI model demonstrates strong mathematical and analytical skills, but
+        sometimes struggles with critical thinking and applying theoretical
+        knowledge to real-world contexts. It excels in detailed calculations and
+        step-by-step reasoning, but occasionally misses broader implications or
+        fails to question underlying assumptions.
+      strenghts:
+        - Excellent mathematical and probabilistic reasoning skills
+        - Strong analytical approach with detailed, step-by-step problem-solving
+        - Good at considering multiple angles and scenarios in complex problems
+        - >-
+          Demonstrates understanding of specific domain knowledge (e.g.,
+          Brooks's Law in software development)
+      weaknesses:
+        - Sometimes fails to consider broader context or real-world implications
+        - >-
+          Occasionally misses key insights that require looking beyond immediate
+          mathematical solutions
+        - Can be overly verbose, lacking conciseness in responses
+        - >-
+          Struggles with questions designed to test critical thinking beyond
+          surface-level analysis
     - model: o3-mini-2025-01-31
-      averageScore: 2.92
+      averageScore: 3.01
+      reasoningModel: true
+      averageWordCount: 112
+      overall: >-
+        The AI model demonstrates basic mathematical and logical skills, but
+        often fails to apply critical thinking or consider deeper implications
+        of problems. It tends to provide surface-level analyses without
+        questioning assumptions or considering real-world complexities.
+      strenghts:
+        - Accurate basic mathematical calculations
+        - Logical step-by-step reasoning for simple scenarios
+        - >-
+          Some awareness of complex concepts (e.g., Brooks's Law in software
+          development)
+      weaknesses:
+        - Lack of critical thinking and questioning of assumptions
+        - Failure to consider real-world complexities and nuances
+        - Overlooking important contextual factors and implications
+        - Tendency to provide overly simplistic answers to complex problems
     - model: o1-mini-2024-09-12
-      averageScore: 3.25
+      averageScore: 3.38
+      reasoningModel: true
+      averageWordCount: 163
+      overall: >-
+        The AI model demonstrates good mathematical skills and basic
+        understanding of concepts, but often lacks critical thinking and fails
+        to consider deeper implications or real-world complexities. It tends to
+        oversimplify problems and miss key points in more nuanced questions.
+      strenghts:
+        - Strong mathematical calculation skills
+        - Ability to provide step-by-step analysis
+        - >-
+          Good at basic problem-solving when straightforward calculations are
+          involved
+        - >-
+          Occasionally demonstrates understanding of complex concepts (e.g.,
+          Brooks's Law in software development)
+      weaknesses:
+        - Lack of critical thinking and contextual awareness
+        - Tendency to oversimplify complex problems
+        - Failure to consider real-world implications and complexities
+        - >-
+          Inability to recognize trick questions or look beyond surface-level
+          information
+        - Inconsistent performance across different types of problems
     - model: o1-2024-12-17
-      averageScore: 3.42
+      averageScore: 3.57
+      reasoningModel: true
+      averageWordCount: 73
+      overall: >-
+        The AI model demonstrates varying levels of performance across different
+        questions. It excels in some areas, showing strong critical thinking and
+        reasoning skills, but struggles in others, particularly when dealing
+        with complex, real-world scenarios that require looking beyond
+        surface-level calculations.
+      strenghts:
+        - Strong mathematical and statistical reasoning in some questions
+        - >-
+          Ability to identify trick questions and avoid surface-level answers in
+          certain cases
+        - >-
+          Good understanding of complex concepts like Brooks's Law in software
+          development
+        - >-
+          Capable of considering multiple factors and implications in some
+          scenarios
+      weaknesses:
+        - Inconsistent critical thinking skills across different questions
+        - >-
+          Tendency to rely on simple calculations without considering broader
+          context in some cases
+        - >-
+          Difficulty in applying theoretical knowledge to real-world situations
+          consistently
+        - >-
+          Occasional failure to recognize the need for non-linear thinking in
+          complex scenarios
     - model: qwen-max-2025-01-25
-      averageScore: 3.25
+      averageScore: 3.37
+      reasoningModel: false
+      averageWordCount: 286
+      overall: >-
+        The AI model demonstrates good mathematical skills and basic
+        problem-solving abilities, but often lacks critical thinking and fails
+        to consider broader contexts or non-linear relationships. It tends to
+        rely on straightforward calculations without questioning underlying
+        assumptions or recognizing trick questions.
+      strenghts:
+        - Proficiency in basic mathematical calculations and probability
+        - Ability to provide step-by-step reasoning for problem-solving
+        - Good understanding of fundamental concepts in various fields
+      weaknesses:
+        - Lack of critical thinking and skepticism when approaching problems
+        - Failure to consider non-linear relationships and complex systems
+        - Tendency to overlook contextual clues and real-world implications
+        - >-
+          Difficulty recognizing and addressing trick questions or
+          counterintuitive scenarios
     - model: qwen-plus-2025-01-25
-      averageScore: 3.55
+      averageScore: 3.65
+      reasoningModel: false
+      averageWordCount: 291
+      overall: >-
+        The AI model demonstrates variable performance across different
+        questions, showing strengths in mathematical calculations but often
+        falling short in critical thinking and applying theoretical knowledge to
+        real-world contexts. The model's reasoning abilities are inconsistent,
+        with some answers showing good analytical skills while others lack depth
+        and consideration of broader implications.
+      strenghts:
+        - Strong mathematical calculation skills
+        - Good basic problem-solving abilities
+        - Ability to provide step-by-step explanations
+        - Occasional demonstration of critical thinking
+      weaknesses:
+        - Inconsistent application of critical thinking skills
+        - Tendency to oversimplify complex problems
+        - Difficulty in considering broader contexts and implications
+        - >-
+          Inconsistent ability to apply theoretical knowledge to practical
+          scenarios
     - model: deepseek-reasoner
-      averageScore: 3.54
-  assisted: []
-  unAssisted: []
+      averageScore: 3.75
+      reasoningModel: true
+      averageWordCount: 123
+      overall: >-
+        The AI model demonstrates inconsistent performance across different
+        problem-solving scenarios. While it excels in some areas, showing strong
+        analytical skills and domain knowledge, it often falls short in critical
+        thinking and the ability to question assumptions or consider broader
+        implications beyond simple calculations.
+      strenghts:
+        - >-
+          Strong mathematical and analytical skills, particularly in probability
+          and expected value calculations
+        - >-
+          Good understanding of specific domain knowledge, such as Brooks's Law
+          in software development
+        - Ability to articulate logical reasoning processes clearly
+        - >-
+          Occasional demonstration of excellent critical thinking and
+          comprehensive analysis
+      weaknesses:
+        - >-
+          Inconsistent application of critical thinking skills across different
+          scenarios
+        - >-
+          Tendency to rely on surface-level information and stereotypes without
+          questioning assumptions
+        - >-
+          Failure to consider real-world implications and non-linear effects in
+          complex systems
+        - >-
+          Difficulty in recognizing and addressing 'trick questions' or problems
+          requiring deeper analysis
+    - model: gemini-2.5-pro-exp-03-25
+      averageScore: 3.75
+      reasoningModel: true
+      averageWordCount: 243
+      overall: >-
+        The AI model demonstrates strong mathematical and analytical skills, but
+        sometimes lacks critical thinking and real-world context application. It
+        excels in complex scenarios requiring deep understanding of specific
+        domains, but can fall short when broader implications or non-linear
+        relationships are involved.
+      strenghts:
+        - Excellent mathematical and probability calculation skills
+        - Strong analytical approach to problem-solving
+        - Ability to apply complex theoretical concepts in specific domains
+        - Comprehensive explanations for correct answers
+      weaknesses:
+        - Occasional lack of critical thinking beyond surface-level analysis
+        - Tendency to overlook real-world context and implications
+        - Sometimes misses non-linear relationships in complex systems
+        - Can fall into traps of oversimplification in certain scenarios
+    - model: gemini-2.0-flash-001
+      averageScore: 3.26
+      reasoningModel: false
+      averageWordCount: 138
+      overall: >-
+        The AI model demonstrates varying levels of performance across different
+        questions. While excelling in software development concepts, it
+        struggles with probabilistic reasoning and critical thinking in some
+        scenarios. The model shows strong mathematical skills but often fails to
+        consider broader contexts or question assumptions.
+      strenghts:
+        - >-
+          Excellent understanding of software development principles and project
+          management complexities
+        - Strong mathematical and calculation skills
+        - Ability to identify trick questions in certain contexts
+        - Detailed explanations when concepts are well understood
+      weaknesses:
+        - >-
+          Tendency to fall into base rate fallacy and oversimplification in
+          probabilistic reasoning
+        - >-
+          Lack of critical thinking in some scenarios, especially when context
+          requires looking beyond surface-level information
+        - >-
+          Inconsistent application of real-world factors and broader
+          implications in problem-solving
+        - >-
+          Difficulty in adapting reasoning to non-linear relationships and
+          complex systems
+    - model: gemini-2.0-flash-lite
+      averageScore: 2.53
+      reasoningModel: false
+      averageWordCount: 122
+      overall: >-
+        The AI model demonstrates basic mathematical skills but often lacks
+        critical thinking and deeper analysis. It tends to focus on
+        surface-level calculations without considering broader contexts or
+        real-world implications. The model struggles with nuanced reasoning and
+        fails to question assumptions or recognize trick questions in most
+        cases.
+      strenghts:
+        - Accurate basic mathematical calculations
+        - Logical approach to straightforward problems
+        - Clear explanation of reasoning process
+      weaknesses:
+        - Lack of critical thinking and deeper analysis
+        - Failure to consider broader contexts and real-world implications
+        - Inability to recognize trick questions or question assumptions
+        - Oversimplification of complex problems
+    - model: gemini-1.5-flash
+      averageScore: 2.97
+      reasoningModel: false
+      averageWordCount: 76
+      overall: >-
+        The AI model demonstrates inconsistent performance across different
+        problem-solving scenarios. While showing strong understanding in
+        software development concepts, it struggles with critical thinking,
+        statistical reasoning, and applying theoretical knowledge to real-world
+        situations in other areas.
+      strenghts:
+        - Strong grasp of software development principles (Brooks's Law)
+        - Basic mathematical and logical reasoning skills
+        - Ability to provide clear explanations for understood concepts
+      weaknesses:
+        - Lack of critical thinking in many scenarios
+        - Difficulty in applying statistical reasoning and probability concepts
+        - Tendency to oversimplify complex problems
+        - >-
+          Inability to recognize 'trick questions' or look beyond surface-level
+          information
+  assisted:
+    - model: gpt-4-turbo-2024-04-09
+      averageScore: 3.5
+      averageWordCount: 273
+    - model: gpt-4o-2024-05-13
+      averageScore: 3.17
+      averageWordCount: 246
+    - model: gemini-1.0-pro-001
+      averageScore: 3
+      averageWordCount: 35
+    - model: claude-3-haiku-20240307
+      averageScore: 3.17
+      averageWordCount: 211
+    - model: claude-3-5-sonnet-20240620
+      averageScore: 4.58
+      averageWordCount: 285
+    - model: claude-3-7-sonnet-20250219
+      averageScore: 4.33
+      averageWordCount: 193
+    - model: deepseek-chat
+      averageScore: 3.83
+      averageWordCount: 582
+    - model: o3-mini-2025-01-31
+      averageScore: 3.83
+      averageWordCount: 177
+    - model: o1-mini-2024-09-12
+      averageScore: 4.25
+      averageWordCount: 205
+    - model: o1-2024-12-17
+      averageScore: 4
+      averageWordCount: 111
+    - model: qwen-max-2025-01-25
+      averageScore: 4.17
+      averageWordCount: 414
+    - model: qwen-plus-2025-01-25
+      averageScore: 4.67
+      averageWordCount: 385
+    - model: deepseek-reasoner
+      averageScore: 4.5
+      averageWordCount: 137
+    - model: gemini-2.5-pro-exp-03-25
+      averageScore: 4
+      averageWordCount: 312
+    - model: gemini-2.0-flash-001
+      averageScore: 3.33
+      averageWordCount: 219
+    - model: gemini-2.0-flash-lite
+      averageScore: 2.75
+      averageWordCount: 223
+    - model: gemini-1.5-flash
+      averageScore: 3.5
+      averageWordCount: 134
+  unAssisted:
+    - model: gpt-4-turbo-2024-04-09
+      averageScore: 2.44
+      averageWordCount: 177
+    - model: gpt-4o-2024-05-13
+      averageScore: 2.56
+      averageWordCount: 165
+    - model: gemini-1.0-pro-001
+      averageScore: 2
+      averageWordCount: 4
+    - model: claude-3-haiku-20240307
+      averageScore: 2
+      averageWordCount: 197
+    - model: claude-3-5-sonnet-20240620
+      averageScore: 2.69
+      averageWordCount: 208
+    - model: claude-3-7-sonnet-20250219
+      averageScore: 3.06
+      averageWordCount: 152
+    - model: deepseek-chat
+      averageScore: 3.19
+      averageWordCount: 608
+    - model: o3-mini-2025-01-31
+      averageScore: 2.19
+      averageWordCount: 112
+    - model: o1-mini-2024-09-12
+      averageScore: 2.5
+      averageWordCount: 163
+    - model: o1-2024-12-17
+      averageScore: 3.13
+      averageWordCount: 73
+    - model: qwen-max-2025-01-25
+      averageScore: 2.56
+      averageWordCount: 286
+    - model: qwen-plus-2025-01-25
+      averageScore: 2.63
+      averageWordCount: 291
+    - model: deepseek-reasoner
+      averageScore: 3
+      averageWordCount: 123
+    - model: gemini-2.5-pro-exp-03-25
+      averageScore: 3.5
+      averageWordCount: 243
+    - model: gemini-2.0-flash-001
+      averageScore: 3.19
+      averageWordCount: 138
+    - model: gemini-2.0-flash-lite
+      averageScore: 2.31
+      averageWordCount: 122
+    - model: gemini-1.5-flash
+      averageScore: 2.44
+      averageWordCount: 76

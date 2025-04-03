@@ -1,5 +1,5 @@
-import React from 'react';
-import { Badge, SimpleGrid, Flex, Box, Text, Progress, Stack, Table, Group } from '@mantine/core';
+import React, { useState } from 'react';
+import { Badge, SimpleGrid, Flex, Box, Text, Progress, Stack, Table, Group, Anchor } from '@mantine/core';
 
 const getRankColor = (rank) => {
   switch (rank) {
@@ -31,68 +31,65 @@ const LeaderboardItem = ({ rank, name, description, score }) => (
 
 );
 
-const LeaderBoard = ({ data }) => {
+const LeaderBoard = ({ data, showReasoningModels = false, maxResults }) => {
+  const [showAll, setShowAll] = useState(false);
   const sortedData = [...data].sort((a, b) => b.score - a.score);
+  
+  const displayData = showAll || !maxResults ? sortedData : sortedData.slice(0, maxResults);
+  const hasMoreResults = maxResults && sortedData.length > maxResults;
 
   return (
-    <Table>
-      <Table.Thead>
-        <Table.Tr>
-          <Table.Th>
-            Rank
-          </Table.Th>
-          <Table.Th>
-            Model
-          </Table.Th>
-          <Table.Th>
-            Score
-          </Table.Th>
-        </Table.Tr>
-
-      </Table.Thead>
-      <Table.Tbody>
-        {sortedData.map((row, index) => {
-          return (
-            <Table.Tr key={row.model}>
+    <>
+      <Table>
+        <Table.Thead>
+          <Table.Tr>
+            <Table.Th w={80}>Rank</Table.Th>
+            <Table.Th>Model</Table.Th>
+            <Table.Th w="40%">Score</Table.Th>
+            <Table.Th w={100}>Avg. Words</Table.Th>
+          </Table.Tr>
+        </Table.Thead>
+        <Table.Tbody>
+          {displayData.map((row, index) => (
+            <Table.Tr key={row.name + index}>
               <Table.Td>
-                <Badge color={getRankColor(index + 1)} size={index < 3 ? 'lg' : 'md'} >
+                <Badge color={getRankColor(index + 1)} size={index < 3 ? 'lg' : 'md'}>
                   {index + 1}
                 </Badge>
-                
               </Table.Td>
               <Table.Td>
                 {row.name}
+                {showReasoningModels && row.reasoningModel && '*'}
               </Table.Td>
               <Table.Td>
                 <Group>
-                  <Progress w="50%" value={row.score * 20} />   
+                  <Progress w="70%" value={row.score * 20} />   
                   <Text size="xs">{row.score} / 5</Text>  
                 </Group>
-
+              </Table.Td>
+              <Table.Td>
+                <Text size="sm" c="dimmed">{row.avgWords}</Text>
               </Table.Td>   
             </Table.Tr>
-          )
-    
-
-        })}
-      </Table.Tbody>
-    </Table>
-
-  )
-
-  {/*
-  return (
-    <Stack>
-      {sortedData.map((item, index) => (
-        <LeaderboardItem
-          key={item.name}
-          rank={index + 1}
-          {...item}
-        />
-      ))}
-    </Stack>
+          ))}
+        </Table.Tbody>
+      </Table>
+      
+      {hasMoreResults && !showAll && (
+        <Text mt="xs" size="sm">
+          <Anchor onClick={() => setShowAll(true)} style={{ cursor: 'pointer' }}>
+            Show all {sortedData.length} results
+          </Anchor>
+        </Text>
+      )}
+      
+      {showReasoningModels && (
+        <Text size="xs" c="dimmed" mt="xs">
+          * Model uses chain-of-thought reasoning by default
+        </Text>
+      )}
+    </>
   );
-  */}
 };
 
 export default LeaderBoard;

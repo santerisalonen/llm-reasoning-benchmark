@@ -1,7 +1,7 @@
 "use client";
 
 import {SunMoon} from 'lucide-react';
-import {useMantineColorScheme, Container, Group, Image, Title} from '@mantine/core';
+import {useMantineColorScheme, Container, Group, Image, Title, Center} from '@mantine/core';
 
 
 export default () => {
@@ -20,12 +20,13 @@ export default () => {
         }} />
       </div>
 
-      <Container size="xs" my="md">
-        <Group>
-          <Image w={60} src="./llm-reasoning-logo.png" />
-          <Title order={1}>LLM Reasoning Benchmark</Title>
-        </Group>
-      </Container>
+        <Center>
+          <Group  my="lg">
+            <Image w={50} src="./llm-reasoning-logo.png" />
+            <Title order={1}>LLM Reasoning Benchmark</Title>
+          </Group>
+        </Center>
+
     </>
   ) 
 }

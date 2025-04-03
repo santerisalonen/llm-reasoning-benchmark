@@ -1,9 +1,9 @@
-
 import prompt from 'prompt-async';
 import yaml from 'js-yaml';
 import fs from 'fs';
 // import path from 'path';
 import clc from "cli-color";
+import { access } from 'fs/promises';
 
 prompt.start();
 
@@ -105,3 +105,12 @@ export const askAnswerText = async() => {
   }});
   return text;
 }
+
+export const fileExists = async (path) => {
+  try {
+    await access(path);
+    return true;
+  } catch {
+    return false;
+  }
+};
