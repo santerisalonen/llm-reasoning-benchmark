@@ -11,6 +11,106 @@ import {askAnswerText, getJsonLines, askDate, confirm, getConfig, appendToLog} f
 const configPath = './data/config.yaml';
 const logFilePath = './data/log.jsonl';
 
+// Check for --auto flag
+const autoMode = process.argv.includes('--auto');
+
+// Function to process a single model
+async function processModel(model, questions, loggedAnswers, date, logFilePath) {
+  const modelSettings = model.disableTemperature ? { temperature: 1 } : {};
+  console.log(clc.green(`process ${model.name}`));
+
+  for (const question of questions) {
+
+    const existingAnswer = loggedAnswers.filter((ans) => {
+      return `${ans.model}-${ans.questionId}` == `${model.name}-${question.QuestionId}`
+    })
+    if (existingAnswer.length > 0) {
+      console.log(`skip model ${model.name} for question ${question.QuestionId} - already logged answer`);
+      continue;
+    } 
+    
+    console.log(`-------------- question ----------------`);
+    console.log(question.QuestionText);
+
+    let answerText, method;
+
+    if (!model.model) {
+      const text = await askAnswerText();
+      answerText = text;
+      method = 'MANUAL';
+    }
+    else {
+      const { text } = await generateText({
+        model: model.model,
+        prompt: question.QuestionText,
+        ...modelSettings,
+      });
+      answerText = text;
+      method = 'API';
+    }
+
+    console.log(`-------------- ${model.name} ----------------`);
+    console.log(answerText)
+
+    const reviewPrompt = `Your task is to review responses of students. 
+    
+    You will be provided with the question and student's response.
+    
+    Questions might be tricky and they can have a simple but wrong surface solution. Questions test student's reasoning skills and ability to adapt their answers based on context.
+
+    Use the expert response as a benchmark when evaluating the quality of student's answer.
+    
+    Provide quality score (1-5) as well as reasoning for the quality score. Do not give high scores easily.
+
+    Also provide evaluation of the correctedness of student's answers (true or false)
+    
+    # Question
+
+    ${question.QuestionText}
+
+    # Expert answer
+
+    ${question.ExpertAnswer}
+
+    # Student answer
+
+    ${answerText}
+    `;
+
+    const reviews = [];
+
+    const reviewModels = models.filter((model) => model.useForReview );
+    if (!reviewModels || reviewModels.length === 0) {
+      throw new Error(`One model must be assigned as review model (useForReview)`)
+    }
+    for (const reviewModel of reviewModels) {
+      const reviewSettings = reviewModel.disableTemperature ? { temperature: 1 } : {};
+      const {object: reviewObject} = await generateObject({
+        model: reviewModel.model,
+        schema: z.object({
+          qualityScore: z.number().describe("Quality score for student's response"),
+          evaluateText: z.string().describe("Reasoning behind the given quality score"),
+          correctness: z.boolean().describe("Is the student's answer true or not"),            
+        }),
+        prompt: reviewPrompt,
+        ...reviewSettings,
+      });
+      reviews.push({model: reviewModel.name, ...reviewObject});
+      console.log(`--------- review ${reviewModel.name} ------------`)
+      console.log(reviewObject)
+    }
+    
+    await appendToLog(logFilePath, {
+      timestamp: new Date().getTime(),
+      date: date,
+      model: model.name,
+      method: method,
+      answerText: answerText,
+      questionId: question.QuestionId,
+      reviews: reviews
+    })
+  }
+}
 
 (async () => {
   dotenv.config();
@@ -22,101 +122,37 @@ const logFilePath = './data/log.jsonl';
 
   
   for (const model of models) {
-    if (await confirm(`Process ${model.name}`)) {
-      
-      console.log(clc.green(`process ${model.name}`));
-
-      for (const question of questions) {
-
-        const existingAnswer = loggedAnswers.filter((ans) => {
-          return `${ans.model}-${ans.questionId}` == `${model.name}-${question.QuestionId}`
-        })
-        if (existingAnswer.length > 0) {
-          console.log(`skip model ${model.name} for question ${question.QuestionId} - already logged answer`);
-          continue;
-        } 
-        
-        console.log(`-------------- question ----------------`);
-        console.log(question.QuestionText);
-
-        let answerText, method;
-
-        if (!model.model) {
-          const text = await askAnswerText();
-          answerText = text;
-          method = 'MANUAL';
-        }
-        else {
-          const { text } = await generateText({
-            model: model.model,
-            prompt: question.QuestionText,
-          });
-          answerText = text;
-          method = 'API';
-        }
-
-        console.log(`-------------- ${model.name} ----------------`);
-        console.log(answerText)
-
-        const reviewPrompt = `Your task is to review responses of students. 
-        
-        You will be provided with the question and student's response.
-        
-        Questions might be tricky and they can have a simple but wrong surface solution. Questions test student's reasoning skills and ability to adapt their answers based on context.
-
-        Use the expert response as a benchmark when evaluating the quality of student's answer.
-        
-        Provide quality score (1-5) as well as reasoning for the quality score. Do not give high scores easily.
-
-        Also provide evaluation of the correctedness of student's answers (true or false)
-        
-        # Question
-
-        ${question.QuestionText}
-
-        # Expert answer
-
-        ${question.ExpertAnswer}
-
-        # Student answer
-
-        ${answerText}
-        `;
-
-        const reviews = [];
-
-        const reviewModels = models.filter((model) => model.useForReview );
-        if (!reviewModels || reviewModels.length === 0) {
-          throw new Error(`One model must be assigned as review model (useForReview)`)
-        }
-        for (const reviewModel of reviewModels) {
-          const {object: reviewObject} = await generateObject({
-            model: reviewModel.model,
-            schema: z.object({
-              qualityScore: z.number().describe("Quality score for student's response"),
-              evaluateText: z.string().describe("Reasoning behind the given quality score"),
-              correctness: z.boolean().describe("Is the student's answer true or not"),            
-            }),
-            prompt: reviewPrompt,
-          });
-          reviews.push({model: reviewModel.name, ...reviewObject});
-          console.log(`--------- review ${reviewModel.name} ------------`)
-          console.log(reviewObject)
-        }
-        
-        await appendToLog(logFilePath, {
-          timestamp: new Date().getTime(),
-          date: date,
-          model: model.name,
-          method: method,
-          answerText: answerText,
-          questionId: question.QuestionId,
-          reviews: reviews
-        })
+    if (autoMode) {
+      // Auto mode: process only models that don't have all answers
+      if (model.method === 'manual') {
+        console.log(clc.yellow(`skip ${model.name} - manual model`));
+        continue;
       }
-    }
-    else {
-      console.log(clc.red(`skip ${model.name}`))
+
+      // Check if model has answers for all questions
+      const modelAnswers = loggedAnswers.filter((ans) => ans.model === model.name);
+      const answeredQuestionIds = new Set(modelAnswers.map(ans => ans.questionId));
+      const allQuestionIds = new Set(questions.map(q => q.QuestionId));
+      const hasAllAnswers = allQuestionIds.size > 0 && 
+                           Array.from(allQuestionIds).every(id => answeredQuestionIds.has(id));
+
+      if (hasAllAnswers) {
+        console.log(clc.cyan(`skip ${model.name} - already has answers for all ${allQuestionIds.size} questions`));
+        continue;
+      }
+
+      const missingCount = allQuestionIds.size - answeredQuestionIds.size;
+      console.log(clc.green(`auto-processing ${model.name} - missing ${missingCount} of ${allQuestionIds.size} questions`));
+      
+      await processModel(model, questions, loggedAnswers, date, logFilePath);
+    } else {
+      // Manual mode: ask for confirmation
+      if (await confirm(`Process ${model.name}`)) {
+        await processModel(model, questions, loggedAnswers, date, logFilePath);
+      }
+      else {
+        console.log(clc.red(`skip ${model.name}`))
+      }
     }
   }
 
@@ -179,7 +215,6 @@ const logFilePath = './data/log.jsonl';
   }
    */
   
-
 
 
 

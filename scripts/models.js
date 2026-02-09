@@ -40,13 +40,13 @@ export default [
   {
     name: 'claude-3-5-sonnet-20240620',
     model: anthropic('claude-3-5-sonnet-20240620'),
-    useForReview: true,
-    useForSummary: true
   },
   // new models
   {
     name: "claude-3-7-sonnet-20250219",
     model: anthropic('claude-3-7-sonnet-20250219'),
+    useForReview: true,
+    useForSummary: true
   },
   {
     name: "deepseek-chat",
@@ -79,6 +79,59 @@ export default [
   {
     name: 'qwen-plus-2025-01-25',
     model: qwen('qwen-plus-2025-01-25'),
+  },
+  // Latest models (2025-2026)
+  {
+    name: 'gpt-5.2-2025-12-11',
+    model: openai('gpt-5.2-2025-12-11'),
+    reasoningModel: true
+  },
+  {
+    name: 'gpt-5-mini-2025-08-07',
+    model: openai('gpt-5-mini-2025-08-07'),
+    reasoningModel: true,
+    disableTemperature: true
+  },
+  {
+    name: 'gpt-5-nano-2025-08-07',
+    model: openai('gpt-5-nano-2025-08-07'),
+    reasoningModel: false,
+    disableTemperature: true
+  },
+  {
+    name: 'gemini-3-pro-preview',
+    model: google('models/gemini-3-pro-preview'),
+    reasoningModel: true
+  },
+  {
+    name: 'gemini-3-flash-preview',
+    model: google('models/gemini-3-flash-preview'),
+    reasoningModel: false
+  },
+  {
+    name: 'claude-opus-4-5-20251101',
+    model: anthropic('claude-opus-4-5-20251101'),
+    reasoningModel: true
+  },
+  {
+    name: 'claude-sonnet-4-5-20250929',
+    model: anthropic('claude-sonnet-4-5-20250929'),
+    reasoningModel: true
+  },
+  {
+    name: 'claude-haiku-4-5-20251001',
+    model: anthropic('claude-haiku-4-5-20251001'),
+    reasoningModel: false
+  },
+  {
+    name: 'qwen3-max-2025-09-23',
+    model: qwen('qwen3-max-2025-09-23'),
+    reasoningModel: false
+  },
+  {
+    name: 'qwen-flash-2025-07-28',
+    model: qwen('qwen-flash-2025-07-28'),
+    reasoningModel: false
   },
   {
     name: "test-model",

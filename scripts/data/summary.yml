@@ -410,6 +410,298 @@ Summaries:
         - >-
           Inability to recognize 'trick questions' or look beyond surface-level
           information
+    - model: gpt-5.2-2025-12-11
+      averageScore: 3.57
+      reasoningModel: true
+      averageWordCount: 85
+      overall: >-
+        The AI model demonstrates inconsistent performance in reasoning tasks.
+        While excelling in software development concepts (Brooks's Law), it
+        consistently fails to apply critical thinking to probability,
+        statistics, and ecological contexts, often missing deeper implications
+        beyond basic calculations.
+      strenghts:
+        - >-
+          Strong mathematical calculation abilities when solving basic expected
+          values and proportions
+        - >-
+          Excellent understanding of software development principles,
+          particularly Brooks's Law and team scaling issues
+        - Clear and structured presentation of answers with logical progression
+        - Ability to recognize trick questions in some contexts
+      weaknesses:
+        - >-
+          Frequently falls for cognitive biases like the representativeness
+          heuristic
+        - Fails to consider real-world contexts beyond mathematical calculations
+        - Lacks understanding of ecological principles and systems thinking
+        - Inconsistent application of critical thinking across different domains
+        - Tendency to miss non-linear relationships in complex systems
+    - model: gpt-5-mini-2025-08-07
+      averageScore: 3.86
+      reasoningModel: true
+      averageWordCount: 87
+      overall: >-
+        The AI model demonstrates strong mathematical reasoning but
+        inconsistently applies critical thinking to real-world contexts. It
+        excels at probabilistic reasoning and identifying cognitive biases, but
+        sometimes misses deeper principles beyond straightforward calculations.
+      strenghts:
+        - Strong mathematical and probabilistic reasoning skills
+        - Excellent at identifying cognitive biases like base rate fallacy
+        - Clear and methodical explanation of calculations
+        - Occasionally demonstrates sophisticated systems thinking
+      weaknesses:
+        - Often misses deeper principles beyond straightforward calculations
+        - Fails to question assumptions in real-world contexts
+        - Inconsistent application of critical thinking
+        - Sometimes overlooks non-linear effects in complex systems
+    - model: gpt-5-nano-2025-08-07
+      averageScore: 3.13
+      reasoningModel: false
+      averageWordCount: 71
+      overall: >-
+        The AI model demonstrates basic mathematical reasoning but struggles
+        with critical thinking and applying theoretical concepts to real-world
+        scenarios. It often defaults to simplistic calculations without
+        questioning assumptions or considering deeper principles behind
+        problems.
+      strenghts:
+        - Capable of performing basic mathematical calculations correctly
+        - >-
+          Shows methodical thinking when verifying answers through multiple
+          approaches
+        - >-
+          Occasionally demonstrates excellent reasoning with sophisticated
+          analysis (as seen in pesticide and Brooks's Law questions)
+        - >-
+          Can identify when problems require more than simple linear
+          calculations in some cases
+      weaknesses:
+        - >-
+          Frequently fails to apply critical thinking to question assumptions in
+          problems
+        - >-
+          Often misses underlying theoretical concepts being tested (like base
+          rates, queuing theory, urban scaling)
+        - >-
+          Tends to default to simplistic linear calculations when problems
+          require non-linear thinking
+        - >-
+          Inconsistent in applying domain-specific knowledge to contextualize
+          mathematical reasoning
+    - model: gemini-3-pro-preview
+      averageScore: 4.38
+      reasoningModel: true
+      averageWordCount: 196
+      overall: >-
+        The AI model demonstrates strong critical thinking and theoretical
+        knowledge application in most cases, excelling at identifying "trap"
+        questions and applying complex principles. However, it sometimes misses
+        real-world implications and fails to properly apply theoretical concepts
+        in practical scenarios.
+      strenghts:
+        - >-
+          Excellent at recognizing and explaining cognitive biases like base
+          rate neglect
+        - >-
+          Strong understanding of complex systems principles (urban scaling
+          theory, ecological paradoxes)
+        - >-
+          Consistently identifies 'trap' questions that require more than
+          mathematical calculations
+        - >-
+          Demonstrates sophisticated knowledge of specialized concepts like
+          Brooks's Law in software development
+      weaknesses:
+        - >-
+          Sometimes fails to apply critical thinking to real-world contexts
+          (missed skepticism in the coin flip scenario)
+        - >-
+          Occasionally calculates mathematically correct answers without
+          considering practical implications
+        - >-
+          Inconsistent application of queuing theory principles despite
+          recognizing them
+        - >-
+          Can miss important implications even when correctly identifying
+          theoretical concepts
+    - model: gemini-3-flash-preview
+      averageScore: 4.19
+      reasoningModel: false
+      averageWordCount: 241
+      overall: >-
+        The AI model demonstrates strong mathematical reasoning but struggles
+        with applying theoretical knowledge to real-world contexts. It excels at
+        complex concepts like urban scaling and Brooks's Law, but often misses
+        critical thinking elements in probability and behavioral scenarios.
+      strenghts:
+        - Strong mathematical calculation abilities and technical reasoning
+        - >-
+          Excellent understanding of complex specialized concepts (urban scaling
+          theory, Brooks's Law)
+        - Well-structured and comprehensive explanations when on the right track
+        - >-
+          Ability to recognize and explain non-intuitive concepts in software
+          development
+      weaknesses:
+        - >-
+          Tendency to prioritize mathematical calculations over real-world
+          contextual reasoning
+        - Difficulty applying base rate reasoning in probability scenarios
+        - >-
+          Sometimes misses deeper principles behind questions (queuing theory,
+          ecological factors)
+        - Inconsistent application of critical thinking across different domains
+    - model: claude-opus-4-5-20251101
+      averageScore: 4.13
+      reasoningModel: true
+      averageWordCount: 177
+      overall: >-
+        The AI model demonstrates strong systems thinking and non-linear
+        reasoning in complex scenarios, but struggles with applying theoretical
+        knowledge consistently, particularly with statistical concepts and
+        cognitive biases. Performance improves significantly with contextual
+        reasoning problems.
+      strenghts:
+        - >-
+          Excellent at identifying and explaining complex systems dynamics
+          (pesticide resistance, forest management)
+        - >-
+          Strong ability to recognize when simple mathematical calculations are
+          insufficient
+        - >-
+          Demonstrates sophisticated understanding of specialized concepts like
+          Brooks's Law
+        - >-
+          Provides well-structured, comprehensive explanations for non-linear
+          problems
+      weaknesses:
+        - >-
+          Inconsistent application of statistical principles despite
+          understanding them
+        - Susceptible to cognitive biases even when aware of them
+        - >-
+          Sometimes fails to apply domain-specific knowledge (like urban scaling
+          theory)
+        - >-
+          Tends to rely on linear calculations when deeper critical thinking is
+          required
+    - model: claude-sonnet-4-5-20250929
+      averageScore: 4.19
+      reasoningModel: true
+      averageWordCount: 176
+      overall: >-
+        The AI model demonstrates strong critical thinking in software
+        development and ecological contexts, but struggles with applying deeper
+        reasoning in probability and statistical scenarios. Performance is
+        inconsistent across different problem types.
+      strenghts:
+        - >-
+          Excellent understanding of ecological principles (pesticide
+          resistance, fire management)
+        - >-
+          Strong grasp of software development concepts (Brooks's Law, team
+          scaling limitations)
+        - Ability to identify cognitive biases like base rate fallacy
+        - >-
+          Provides detailed mathematical analysis when correctly understanding
+          concepts
+      weaknesses:
+        - >-
+          Tends to rely on simplistic linear calculations in statistical
+          problems
+        - >-
+          Misses deeper reasoning in probability scenarios beyond basic expected
+          value
+        - Fails to apply queuing theory in service system problems
+        - Inconsistent application of critical thinking across different domains
+    - model: claude-haiku-4-5-20251001
+      averageScore: 3.32
+      reasoningModel: false
+      averageWordCount: 151
+      overall: >-
+        The AI model demonstrates inconsistent reasoning abilities. It excels at
+        software development concepts and ecological principles, but struggles
+        with probabilistic reasoning, queueing theory, and critical thinking in
+        scenarios requiring deeper analysis beyond surface calculations.
+      strenghts:
+        - >-
+          Strong understanding of software development principles (Brooks's Law
+          and mythical man-month)
+        - Excellent grasp of ecological concepts like pesticide resistance
+        - Capable of basic mathematical calculations
+        - Occasionally demonstrates nuanced thinking beyond simple formulas
+      weaknesses:
+        - >-
+          Frequently falls for cognitive biases like the representativeness
+          heuristic
+        - >-
+          Often misses key theoretical principles (base rates, queueing theory,
+          urban scaling)
+        - Tends to apply linear thinking to non-linear problems
+        - >-
+          Fails to question premises and consider deeper implications in
+          scenario-based problems
+    - model: qwen3-max-2025-09-23
+      averageScore: 3.71
+      reasoningModel: false
+      averageWordCount: 259
+      overall: >-
+        The AI model demonstrates inconsistent reasoning abilities. While it
+        excels at identifying non-linear relationships in some contexts
+        (software development, pest resistance), it frequently fails to apply
+        critical thinking beyond basic calculations in other scenarios.
+      strenghts:
+        - Strong mathematical calculation skills across various problems
+        - >-
+          Excellent understanding of Brooks' Law and software development
+          scaling issues
+        - >-
+          Ability to recognize ecological principles in pest management
+          scenarios
+        - Clear and structured presentation of answers with logical flow
+      weaknesses:
+        - >-
+          Frequently fails to look beyond mathematical calculations to consider
+          real-world context
+        - Often misses key statistical concepts like base rate probability
+        - >-
+          Struggles with applying theoretical knowledge about non-linear systems
+          (queueing theory, urban scaling)
+        - Tendency to accept problem premises without critical questioning
+    - model: qwen-flash-2025-07-28
+      averageScore: 3
+      reasoningModel: false
+      averageWordCount: 236
+      overall: >-
+        The AI model demonstrates inconsistent reasoning abilities across
+        problems. While technically proficient with calculations, it frequently
+        fails to apply critical thinking to real-world contexts, missing key
+        principles in ecology, statistics, and systems thinking.
+      strenghts:
+        - Accurate mathematical calculations and basic quantitative reasoning
+        - >-
+          Occasionally demonstrates understanding of complex principles (as in
+          Review #7)
+        - Logical approach to structured problems with clear parameters
+        - Ability to set up and solve straightforward equations
+      weaknesses:
+        - >-
+          Frequently misses underlying principles beyond surface-level
+          mathematics
+        - >-
+          Fails to consider real-world contexts and practical implications of
+          theoretical concepts
+        - >-
+          Tendency to apply linear thinking to non-linear problems (especially
+          in ecological systems)
+        - >-
+          Overlooks statistical concepts like base rate fallacy and queuing
+          theory
+        - >-
+          Inconsistent application of critical thinking across different problem
+          domains
   assisted:
     - model: gpt-4-turbo-2024-04-09
       averageScore: 3.5
@@ -462,6 +754,36 @@ Summaries:
     - model: gemini-1.5-flash
       averageScore: 3.5
       averageWordCount: 134
+    - model: gpt-5.2-2025-12-11
+      averageScore: 4
+      averageWordCount: 144
+    - model: gpt-5-mini-2025-08-07
+      averageScore: 4.33
+      averageWordCount: 128
+    - model: gpt-5-nano-2025-08-07
+      averageScore: 3.5
+      averageWordCount: 132
+    - model: gemini-3-pro-preview
+      averageScore: 4.5
+      averageWordCount: 215
+    - model: gemini-3-flash-preview
+      averageScore: 4.5
+      averageWordCount: 270
+    - model: claude-opus-4-5-20251101
+      averageScore: 4.5
+      averageWordCount: 200
+    - model: claude-sonnet-4-5-20250929
+      averageScore: 4.5
+      averageWordCount: 197
+    - model: claude-haiku-4-5-20251001
+      averageScore: 3.5
+      averageWordCount: 197
+    - model: qwen3-max-2025-09-23
+      averageScore: 4.17
+      averageWordCount: 313
+    - model: qwen-flash-2025-07-28
+      averageScore: 3.5
+      averageWordCount: 455
   unAssisted:
     - model: gpt-4-turbo-2024-04-09
       averageScore: 2.44
@@ -514,3 +836,33 @@ Summaries:
     - model: gemini-1.5-flash
       averageScore: 2.44
       averageWordCount: 76
+    - model: gpt-5.2-2025-12-11
+      averageScore: 3.13
+      averageWordCount: 85
+    - model: gpt-5-mini-2025-08-07
+      averageScore: 3.38
+      averageWordCount: 87
+    - model: gpt-5-nano-2025-08-07
+      averageScore: 2.75
+      averageWordCount: 71
+    - model: gemini-3-pro-preview
+      averageScore: 4.25
+      averageWordCount: 196
+    - model: gemini-3-flash-preview
+      averageScore: 3.88
+      averageWordCount: 241
+    - model: claude-opus-4-5-20251101
+      averageScore: 3.75
+      averageWordCount: 177
+    - model: claude-sonnet-4-5-20250929
+      averageScore: 3.88
+      averageWordCount: 176
+    - model: claude-haiku-4-5-20251001
+      averageScore: 3.13
+      averageWordCount: 151
+    - model: qwen3-max-2025-09-23
+      averageScore: 3.25
+      averageWordCount: 259
+    - model: qwen-flash-2025-07-28
+      averageScore: 2.5
+      averageWordCount: 236

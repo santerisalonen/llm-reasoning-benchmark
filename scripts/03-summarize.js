@@ -147,10 +147,12 @@ const promptUser = async (question) => {
         ).describe("List 3-4 main weaknesses based on reviews"),       
       });
       
+      const summarySettings = summaryModel?.disableTemperature ? { temperature: 1 } : {};
       const {object: generatedSummary} = await generateObject({
         model: summaryModel.model,
         schema: schema,
         prompt: instructionPrompt + unAssistedReviewsText,
+        ...summarySettings,
       });
       unAssistedSummary = generatedSummary;
     }
